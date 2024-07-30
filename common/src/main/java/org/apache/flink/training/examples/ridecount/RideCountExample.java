@@ -49,6 +49,7 @@ public class RideCountExample {
 
         // start the data generator
         DataStream<TaxiRide> rides = env.addSource(new TaxiRideGenerator());
+        System.out.println(env.getConfig().toString());
 
         // map each ride to a tuple of (driverId, 1)
         DataStream<Tuple2<Long, Long>> tuples =
